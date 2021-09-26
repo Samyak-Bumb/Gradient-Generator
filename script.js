@@ -11,8 +11,8 @@ function setDirection(value,_this){
     currentDirection = value;
 }
 function generateCode(){
-    outputCode.value = `background-image: linear-gradient(${currentDirection}, ${colorOne.value}, ${colorTwo.value})`;
-    document.getElementsByTagName("BODY")[0].style.backgroundImage = `linear-gradient(${currentDirection}, ${colorOne.value}, ${colorTwo.value})`;
+    outputCode.value = `background-image: linear-gradient(${currentDirection},${colorOne.value},${colorTwo.value})`;
+    document.getElementsByTagName("BODY")[0].style.backgroundImage = `linear-gradient(${currentDirection},${colorOne.value},${colorTwo.value})`;
 }
 function copyText(){
     outputCode.select();
@@ -20,3 +20,10 @@ function copyText(){
     alert('Gradient Copied!');
 }
 generateCode();
+var input = document.getElementById("code");
+input.addEventListener("keyup", function(event){
+  if (event.keyCode === 13){
+   event.preventDefault();
+   document.getElementById("submit").click();
+  }
+});
